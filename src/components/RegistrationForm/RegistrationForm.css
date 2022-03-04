@@ -1,0 +1,21 @@
+.regForm{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  height: 600px;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.regFormHeader{
+  font-size: 50px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 17%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

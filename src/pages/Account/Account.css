@@ -1,0 +1,13 @@
+.accountContainer{
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.emailBlock {
+  display: flex;
+  width: 165px;
+  justify-content: space-between;
+}

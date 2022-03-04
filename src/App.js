@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
-function App() {
+import Registration from "./pages/Registration";
+import Login from "./pages/Login";
+import Navbar from "./components/Navbar";
+import { observer } from "mobx-react-lite";
+import { Context } from "./index";
+import { useContext, useEffect } from "react";
+import { isAuth } from "./http/userApi";
+
+import Account from "./pages/Account";
+import MainPage from "./pages/MainPage";
+
+
+
+const App = observer(() => {
+
+
+  const { user } = useContext(Context)
+
+  useEffect(() => {
+    isAuth().then(() => {
+      user.setUser(true)
+      user.setIsAuth(true)
+    })
+  }, [user])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<MainPage/>}/>
+          <Route path="/signup" element={<Registration />} />
+          <Route path="/signin" element={<Login />} />
+          <Route path={'/account/:id'} element={<Account/>} />
+        </Routes>
+      </Router>
     </div>
   );
-}
+})
 
 export default App;

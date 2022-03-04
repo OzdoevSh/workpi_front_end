@@ -1,0 +1,31 @@
+.navbarAuth{
+  height: 100px;
+  background-color: black;
+  color: white;
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbarNotAuth{
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.953);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.mainPageBlock{
+  margin-left: 30px;
+}
+
+.auth{
+  margin-right: 30px;
+  display: flex;
+  justify-content: space-around;
+  width: 12%;
+}
